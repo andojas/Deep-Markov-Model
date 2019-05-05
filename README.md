@@ -1,2 +1,2 @@
-# Vienas Vienas Vienas
-Pirmas bandymas
+# My bioinformatics project
+Something about DMMs
