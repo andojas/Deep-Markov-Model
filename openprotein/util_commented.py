@@ -108,7 +108,7 @@ def write_result_summary(accuracy):
 
 def calculate_dihedral_angles_over_minibatch(atomic_coords_padded, batch_sizes, use_gpu):
     angles = []
-    atomic_coords = atomic_coords_padded.transpose(0,1)
+    atomic_coords = atomic_coords_padded.transpose(0,1) # turn dimensions into 1 x seqlen x 9
     for idx, _ in enumerate(batch_sizes):
         angles.append(calculate_dihedral_angles(atomic_coords[idx][:batch_sizes[idx]], use_gpu))
     return torch.nn.utils.rnn.pad_packed_sequence(
